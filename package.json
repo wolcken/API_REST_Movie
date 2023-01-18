@@ -1,0 +1,19 @@
+{
+  "name": "api_rest_movie",
+  "version": "1.0.0",
+  "description": "Consumo de API REST para movies con js",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolcken/API_REST_Movie.git"
+  },
+  "author": "@Wolcken",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wolcken/API_REST_Movie/issues"
+  },
+  "homepage": "https://github.com/wolcken/API_REST_Movie#readme"
+}
