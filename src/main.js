@@ -11,10 +11,10 @@ const api = axios.create({
 async function getTrendingMoviesPreview() {
     const { data } = await api('/trending/movie/day');
     const movies = data.results;
+
+    trendingMoviesPreviewList.innerHTML = "";
     
     movies.forEach(movie => {
-        const trendingPreviewMoviesContainer = document.querySelector('#trendingPreview .trendingPreview-movieList')
-
         const movieContainer = document.createElement('div');
         movieContainer.classList.add('movie-container');
 
@@ -24,7 +24,7 @@ async function getTrendingMoviesPreview() {
         movieImg.setAttribute('src', 'https://image.tmdb.org/t/p/w300' + movie.poster_path);
 
         movieContainer.appendChild(movieImg);
-        trendingPreviewMoviesContainer.append(movieContainer);
+        trendingMoviesPreviewList.append(movieContainer);
     });
 }
 
@@ -32,9 +32,9 @@ async function getCategoriesPreview() {
     const { data } = await api('/genre/movie/list');
     const categories = data.genres;
 
-    categories.forEach(category => {
-        const previewCategoriesContainer = document.querySelector('#categoriesPreview .categoriesPreview-list')
+    categoriesPreviewList.innerHTML = "";
 
+    categories.forEach(category => {
         const categoryContainer = document.createElement('div');
         categoryContainer.classList.add('category-container');
 
@@ -45,6 +45,6 @@ async function getCategoriesPreview() {
 
         cartegoryTitle.appendChild(categoryTitleText);
         categoryContainer.appendChild(cartegoryTitle);
-        previewCategoriesContainer.appendChild(categoryContainer);
+        categoriesPreviewList.appendChild(categoryContainer);
     });
 }
